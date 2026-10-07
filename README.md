@@ -1,861 +1,751 @@
-
-Library
-/
-README_Professional.md
-
 <div align="center">
 
-🐾 LOCAL PET CARE & ADOPTION MATCHMAKER
-Find the right pet. Build a better bond. Care locally.
+# 🐾 Local Pet Care & Adoption Matchmaker
 
-<p> A modular C++ project combining <b>Pet Adoption</b>, <b>Pet Care</b>, <b>Smart Matchmaking</b>, <b>Lost & Found</b>, and <b>Local Pet Services</b>. </p>
+### *Find the right pet. Build a better bond. Care locally.*
 
-<br>
+<p>
+A modular <b>C++</b> application combining <b>Pet Adoption</b>, <b>Pet Care</b>, <b>Smart Matchmaking</b>, <b>Lost &amp; Found</b>, and <b>Local Pet Services</b> into one integrated platform.
+</p>
 
+<p>
+<img src="https://img.shields.io/badge/Language-C%2B%2B17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++17"/>
+<img src="https://img.shields.io/badge/Paradigm-OOP-8A2BE2?style=for-the-badge" alt="OOP"/>
+<img src="https://img.shields.io/badge/Storage-File%20Based-FF8C00?style=for-the-badge" alt="File Based"/>
+<img src="https://img.shields.io/badge/Team-5%20Members-2E8B57?style=for-the-badge" alt="Team"/>
+<img src="https://img.shields.io/badge/Status-In%20Development-yellow?style=for-the-badge" alt="Status"/>
+</p>
 
+<p>
+<img src="https://img.shields.io/badge/Git-Feature%20Branch%20Workflow-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"/>
+<img src="https://img.shields.io/badge/GitHub-Collaboration-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
+<img src="https://img.shields.io/badge/Platform-Console-lightgrey?style=flat-square" alt="Console"/>
+</p>
 
-
-
-
+**🐶 Discover → 🔎 Search → ❤️ Match → 🏠 Adopt → 💉 Care → 💬 Connect**
 
 </div>
 
-🌟 Project at a Glance
+---
 
-Local Pet Care & Adoption Matchmaker is a team-developed C++ application designed to make pet adoption and pet care more organized, personalized, and accessible.
+## 📑 Table of Contents
 
-The system brings several real-world pet services into one platform:
+| # | Section | # | Section |
+|:-:|:--|:-:|:--|
+| 1 | [🌟 Project at a Glance](#-project-at-a-glance) | 12 | [💬 Messaging & 🔔 Notifications](#-messaging--notifications) |
+| 2 | [🚀 Getting Started](#-getting-started) | 13 | [🛡️ Admin Panel](#️-admin-panel) |
+| 3 | [🧭 System Architecture](#-system-architecture) | 14 | [📁 Data & File Storage](#-data--file-storage) |
+| 4 | [👥 Team & Responsibilities](#-team--responsibilities) | 15 | [🧱 Object-Oriented Design](#-object-oriented-design) |
+| 5 | [✨ Core Features](#-core-features) | 16 | [📂 Project Structure](#-project-structure) |
+| 6 | [❤️ Smart Matchmaker Engine](#️-smart-matchmaker-engine) | 17 | [🔀 Git & GitHub Workflow](#-git--github-workflow) |
+| 7 | [🏠 Adoption Workflow](#-adoption-workflow) | 18 | [🔒 Team Rules & Standards](#-team-rules--standards) |
+| 8 | [🏷️ Status & ID Conventions](#️-status--id-conventions) | 19 | [🧪 Testing & Error Handling](#-testing--error-handling) |
+| 9 | [📍 Lost & Found](#-lost--found) | 20 | [🎓 10% Demonstration Milestone](#-10-demonstration-milestone) |
+| 10 | [🏪 Pet Services Directory](#-pet-services-directory) | 21 | [🗺️ Development Roadmap](#️-development-roadmap) |
+| 11 | [💉 Pet Health Care](#-pet-health-care) | 22 | [🤝 Contributing · 📜 License](#-contributing) |
 
-🐶 Discover Pets → 🔎 Search & Filter → ❤️ Match → 🏠 Adopt → 💉 Care → 💬 Connect
+---
 
-The project focuses on Object-Oriented Programming, algorithms, file handling, modular design, and collaborative software development using Git & GitHub.
+## 🌟 Project at a Glance
 
-🧭 SYSTEM ARCHITECTURE
+**Local Pet Care & Adoption Matchmaker** is a team-developed C++ application that makes pet adoption and pet care more **organized**, **personalized**, and **accessible**.
+
+| Aspect | Details |
+|:--|:--|
+| 🎯 **Goal** | Bring adoption, matchmaking, care, and local pet services into a single platform |
+| 💻 **Language** | C++ (C++17 recommended) |
+| 🖥️ **Interface** | Console / menu-driven |
+| 💾 **Storage** | Plain-text files with `\|` field separators |
+| 🧱 **Design** | Object-Oriented, modular, one module per team member |
+| 🔀 **Collaboration** | Git & GitHub with feature-branch workflow and Pull Requests |
+
+### 🎓 Learning Outcomes
+
+| Area | What the project demonstrates |
+|:--|:--|
+| 🧱 OOP | Classes, encapsulation, inheritance, polymorphism |
+| ⚙️ Algorithms | Searching, filtering, weighted scoring, sorting/ranking |
+| 📁 File Handling | Persistent read/write of structured data |
+| 🏗️ Architecture | Modular design and multi-module integration |
+| 🔀 Teamwork | Branching, commits, code review, conflict resolution |
+
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+| Tool | Version | Purpose |
+|:--|:--|:--|
+| `g++` / `clang++` | C++17 support | Compile the project |
+| `git` | Any recent version | Version control |
+| VS Code / CLion / Code::Blocks | Optional | Development environment |
+
+### 📥 Clone the Repository
+
+```bash
+git clone https://github.com/<your-org>/Local-Pet-Care-Adoption-Matchmaker.git
+cd Local-Pet-Care-Adoption-Matchmaker
+```
+
+### 🔨 Build
+
+```bash
+# Linux / macOS
+g++ -std=c++17 -Iinclude src/*.cpp src/*/*.cpp -o petmatch
+
+# Windows (MinGW)
+g++ -std=c++17 -Iinclude src/*.cpp src/*/*.cpp -o petmatch.exe
+```
+
+### ▶️ Run
+
+```bash
+./petmatch          # Linux / macOS
+petmatch.exe        # Windows
+```
+
+> 💡 **Note:** Run the program from the project root so it can find the `data/` folder.
+
+---
+
+## 🧭 System Architecture
+
+```text
                          ┌─────────────────────────────────────┐
-                         │       🐾 PET MATCHMAKER APP         │
-                         │      Local Pet Care Platform        │
+                         │        🐾 PET MATCHMAKER APP        │
+                         │       Local Pet Care Platform       │
                          └──────────────────┬──────────────────┘
                                             │
                     ┌───────────────────────┴───────────────────────┐
                     │                                               │
-          ┌─────────▼─────────┐                           ┌─────────▼─────────┐
-          │  🔐 AUTHENTICATION │                           │   🏠 DASHBOARD    │
-          │ Register / Login   │                           │ User / Admin      │
-          └─────────┬─────────┘                           └─────────┬─────────┘
-                    │                                               │
+          ┌─────────▼──────────┐                         ┌──────────▼─────────┐
+          │ 🔐 AUTHENTICATION  │                         │    🏠 DASHBOARD    │
+          │  Register / Login  │                         │    User / Admin    │
+          └─────────┬──────────┘                         └──────────┬─────────┘
                     └───────────────────────┬───────────────────────┘
                                             │
-        ┌───────────────────────┬───────────┼───────────┬──────────────────────┐
-        │                       │           │           │                      │
-        ▼                       ▼           ▼           ▼                      ▼
- ┌──────────────┐       ┌────────────┐ ┌──────────┐ ┌──────────────┐ ┌──────────────┐
- │ 🔎 DISCOVERY │       │ 🏠 ADOPTION │ │ ❤️ MATCH │ │ 🐾 PET CARE  │ │ 💬 COMMUNITY │
- │              │       │            │ │  MAKER   │ │              │ │              │
- │ Search       │       │ Pet Mgmt   │ │ Score    │ │ Health       │ │ Messaging    │
- │ Filter       │       │ Requests   │ │ Ranking  │ │ Vaccination  │ │ Notifications│
- │ Favorites    │       │ Status     │ │ Match %  │ │ Records      │ │ Local Links  │
- └──────┬───────┘       └─────┬──────┘ └────┬─────┘ └──────┬───────┘ └──────┬───────┘
-        │                       │             │              │                  │
-        └───────────────────────┴─────────────┴──────────────┴──────────────────┘
-                                            │
-                                   ┌────────▼────────┐
-                                   │  📁 DATA LAYER  │
-                                   │                │
-                                   │ File Handling  │
-                                   │ Read / Write   │
-                                   │ Persistent Data│
-                                   └────────┬────────┘
-                                            │
-                                   ┌────────▼────────┐
-                                   │ 🛡️ ADMIN PANEL │
-                                   │                │
-                                   │ Users          │
-                                   │ Pets           │
-                                   │ Requests       │
-                                   │ Reports        │
-                                   │ Services       │
-                                   └─────────────────┘
-🔗 High-Level Flow
-                    USER
-                     │
-                     ▼
-              ┌─────────────┐
-              │ Login / Sign│
-              │    Up       │
-              └──────┬──────┘
-                     │
-                     ▼
-              ┌─────────────┐
-              │  Dashboard  │
-              └──────┬──────┘
-                     │
-        ┌────────────┼────────────┐
-        ▼            ▼            ▼
-   Find a Pet     Matchmaker   Services
-        │            │            │
-        ▼            ▼            ▼
-     Search      Compatibility  Local
-     Filter        Score       Discovery
-        │            │            │
-        └────────────┼────────────┘
-                     ▼
-               Adoption Request
-                     │
-                     ▼
-                Admin Review
-                     │
-              ┌──────┴──────┐
-              ▼             ▼
-           Approved       Rejected
-              │
-              ▼
-          Pet Adopted
-👥 TEAM & RESPONSIBILITIES
-Member	Core Modules	Main Focus
-Maria	🔎 Search & Filter · ⭐ Favorites · ❤️ Matchmaker	Discovery & recommendation
-Pranty	🏠 Adoption · 🐾 Pet Management	Pet listings & adoption flow
-Jannat	📍 Lost & Found · 🏪 Pet Services	Local pet community
-Maruf	💉 Health Care · 💬 Messaging · 🛡️ Admin	Care, communication & management
-Megha	📁 File Handling · 📍 Local Discovery · 🔔 Notifications · 🔐 Authentication · 🏠 Dashboard · 🔗 Integration	Data, access & final integration
+     ┌──────────────────┬───────────────────┼───────────────────┬──────────────────┐
+     ▼                  ▼                   ▼                   ▼                  ▼
+┌──────────────┐ ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+│ 🔎 DISCOVERY │ │ 🏠 ADOPTION  │  │ ❤️ MATCHMAKER│  │ 🐾 PET CARE  │  │ 💬 COMMUNITY │
+│ Search       │ │ Pet Mgmt     │  │ Score        │  │ Health       │  │ Messaging    │
+│ Filter       │ │ Requests     │  │ Ranking      │  │ Vaccination  │  │ Notifications│
+│ Favorites    │ │ Status       │  │ Match %      │  │ Records      │  │ Local Links  │
+└──────┬───────┘ └──────┬───────┘  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘
+       └────────────────┴─────────────────┼─────────────────┴─────────────────┘
+                                          │
+                                 ┌────────▼────────┐
+                                 │  📁 DATA LAYER  │
+                                 │  File Handling  │
+                                 │  Read / Write   │
+                                 └────────┬────────┘
+                                          │
+                                 ┌────────▼────────┐
+                                 │ 🛡️ ADMIN PANEL  │
+                                 │ Users · Pets    │
+                                 │ Requests        │
+                                 │ Reports         │
+                                 │ Services        │
+                                 └─────────────────┘
+```
 
-Team principle: Each member owns their module, but the final product is one integrated application.
+### 🔗 High-Level User Flow
 
-✨ CORE FEATURES
+```mermaid
+flowchart TD
+    A([👤 User]) --> B[🔐 Login / Sign Up]
+    B --> C[🏠 Dashboard]
+    C --> D[🔎 Find a Pet]
+    C --> E[❤️ Matchmaker]
+    C --> F[🏪 Services]
+    D --> D1[Search & Filter]
+    E --> E1[Compatibility Score]
+    F --> F1[Local Discovery]
+    D1 --> G[📝 Adoption Request]
+    E1 --> G
+    G --> H{🛡️ Admin Review}
+    H -->|Approved| I[✅ Pet Adopted]
+    H -->|Rejected| J[❌ Request Closed]
+```
 
-<table> <tr> <td width="50%">
+---
 
-🔐 Authentication
-User registration
-Login
-User roles
-Profile access
-🔎 Search & Filter
-Species
-Breed
-Age
-Gender
-Location
-Adoption status
-⭐ Favorites
-Add pets
-Remove pets
-View saved pets
-❤️ Smart Matchmaker
-Compatibility scoring
-Preference-based matching
-Ranked recommendations
-🏠 Adoption
-Adoption requests
-Request tracking
-Admin approval
-Adoption status
+## 👥 Team & Responsibilities
 
-</td> <td width="50%">
+| Member | Core Modules | Main Focus | Branch |
+|:--|:--|:--|:--|
+| 👩‍💻 **Maria** | 🔎 Search & Filter · ⭐ Favorites · ❤️ Matchmaker | Discovery & recommendation | `maria/search-matchmaker` |
+| 👩‍💻 **Pranty** | 🏠 Adoption · 🐾 Pet Management | Pet listings & adoption flow | `pranty/pet-adoption` |
+| 👩‍💻 **Jannat** | 📍 Lost & Found · 🏪 Pet Services | Local pet community | `jannat/lost-found-services` |
+| 👨‍💻 **Maruf** | 💉 Health Care · 💬 Messaging · 🛡️ Admin | Care, communication & management | `maruf/health-messaging-admin` |
+| 👩‍💻 **Megha** | 🔐 Authentication · 📁 File Handling · 📍 Local Discovery · 🔔 Notifications · 🏠 Dashboard · 🔗 Integration | Data, access & final integration | `megha/auth-file-notification` |
 
-📍 Lost & Found
-Report lost pets
-Report found pets
-View reports
-Resolution status
-🏪 Pet Services
-Veterinary clinics
-Grooming
-Boarding
-Training
-Pet shops
-💉 Pet Health
-Vaccination records
-Medical notes
-Medication information
-Due-date tracking
-💬 Messaging
-Sender / receiver
-Basic messaging
-Stored conversations
-🛡️ Admin Panel
-User management
-Pet management
-Adoption review
-Reports & services
+> 🤝 **Team Principle:** Each member owns their module, but the final product is **one integrated application**.
 
-</td> </tr> </table>
+---
 
-❤️ SMART MATCHMAKER ENGINE
+## ✨ Core Features
 
-The Matchmaker Engine is one of the project's main highlights.
+| Module | Features | Owner |
+|:--|:--|:--|
+| 🔐 **Authentication** | Registration · Login · User roles · Profile access | Megha |
+| 🔎 **Search & Filter** | Species · Breed · Age · Gender · Location · Adoption status | Maria |
+| ⭐ **Favorites** | Add pets · Remove pets · View saved pets | Maria |
+| ❤️ **Smart Matchmaker** | Compatibility scoring · Preference-based matching · Ranked recommendations | Maria |
+| 🐾 **Pet Management** | Add · View · Update · Remove pet listings | Pranty |
+| 🏠 **Adoption** | Adoption requests · Request tracking · Admin approval · Status updates | Pranty |
+| 📍 **Lost & Found** | Report lost pets · Report found pets · View reports · Resolution status | Jannat |
+| 🏪 **Pet Services** | Vets · Grooming · Boarding · Training · Pet shops · Food providers | Jannat |
+| 💉 **Pet Health** | Vaccination records · Medical notes · Medication · Due-date tracking | Maruf |
+| 💬 **Messaging** | Sender / receiver · Basic messaging · Stored conversations | Maruf |
+| 🛡️ **Admin Panel** | User · Pet · Adoption · Report · Service management | Maruf |
+| 🔔 **Notifications** | Approvals · New messages · Vaccine reminders · System alerts | Megha |
+| 🏠 **Dashboard** | Central user / admin menu linking every module | Megha |
 
-It evaluates user preferences and pet characteristics, calculates a compatibility score, and ranks suitable pets.
+---
 
-Example Scoring Model
-Criteria	Weight
-Species Compatibility	30%
-Age Compatibility	15%
-Location	15%
-Size	10%
-Activity Level	10%
-Living Environment	10%
-Other Preferences	10%
-Total	100%
-Example Result
+## ❤️ Smart Matchmaker Engine
+
+The **Matchmaker Engine** is the project's main highlight. It compares user preferences against pet characteristics, calculates a **weighted compatibility score**, and ranks pets from best to least compatible.
+
+### ⚖️ Scoring Model
+
+| Criteria | Weight | Example Rule |
+|:--|:-:|:--|
+| 🐕 Species Compatibility | **30%** | Exact match = full points |
+| 🎂 Age Compatibility | **15%** | Within preferred age range |
+| 📍 Location | **15%** | Same area = full, nearby = partial |
+| 📏 Size | **10%** | Matches preferred size |
+| ⚡ Activity Level | **10%** | Matches user lifestyle |
+| 🏡 Living Environment | **10%** | Apartment / house / yard suitability |
+| ➕ Other Preferences | **10%** | Gender, breed, temperament, etc. |
+| | **100%** | **Total** |
+
+### 🧮 Formula
+
+```text
+Match % = Σ (criterion_score × criterion_weight)      where criterion_score ∈ [0, 1]
+```
+
+### 🏆 Example Result
+
+```text
 ╔══════════════════════════════════╗
-║      ❤️ YOUR BEST MATCHES        ║
+║        ❤️ YOUR BEST MATCHES      ║
 ╠══════════════════════════════════╣
-║  🥇 Bruno   → 95% Match          ║
-║  🥈 Rocky   → 84% Match          ║
-║  🥉 Max     → 76% Match          ║
+║   🥇  Bruno   →  95% Match       ║
+║   🥈  Rocky   →  84% Match       ║
+║   🥉  Max     →  76% Match       ║
 ╚══════════════════════════════════╝
+```
 
-The system should sort recommendations from highest compatibility to lowest compatibility.
+> 📌 Recommendations are always sorted **from highest to lowest** compatibility.
 
-🏠 ADOPTION WORKFLOW
-┌──────────────┐
-│ Available Pet│
-└──────┬───────┘
-       ▼
-┌──────────────┐
-│ User Selects │
-│     Pet      │
-└──────┬───────┘
-       ▼
-┌──────────────┐
-│ Submit       │
-│ Request      │
-└──────┬───────┘
-       ▼
-┌──────────────┐
-│   PENDING    │
-└──────┬───────┘
-       ▼
-┌──────────────┐
-│ Admin Review │
-└──────┬───────┘
-       │
-   ┌───┴────┐
-   ▼        ▼
-APPROVED  REJECTED
-   │
-   ▼
-ADOPTED
-Standard Status Values
-Available
-Pending
-Approved
-Rejected
-Adopted
-Lost
-Found
-Resolved
-📍 LOST & FOUND
+---
+
+## 🏠 Adoption Workflow
+
+```mermaid
+flowchart LR
+    A[🐾 Available Pet] --> B[👤 User Selects Pet]
+    B --> C[📝 Submit Request]
+    C --> D[⏳ PENDING]
+    D --> E{🛡️ Admin Review}
+    E -->|✅| F[APPROVED]
+    E -->|❌| G[REJECTED]
+    F --> H[🏠 ADOPTED]
+```
+
+---
+
+## 🏷️ Status & ID Conventions
+
+### 📊 Standard Status Values
+
+| Status | Used In | Meaning |
+|:--|:--|:--|
+| 🟢 `Available` | Pets | Open for adoption |
+| 🟡 `Pending` | Adoption | Request submitted, awaiting review |
+| 🔵 `Approved` | Adoption | Request accepted by admin |
+| 🔴 `Rejected` | Adoption | Request declined by admin |
+| 🏠 `Adopted` | Pets | Pet has a new home |
+| 🚨 `Lost` | Lost & Found | Pet reported missing |
+| 🔍 `Found` | Lost & Found | Pet reported found |
+| ✅ `Resolved` | Lost & Found | Case closed |
+
+### 🆔 ID Conventions
+
+| Entity | Field | Prefix | Example |
+|:--|:--|:-:|:-:|
+| User | `userID` | `U` | `U001` |
+| Pet | `petID` | `P` | `P001` |
+| Adoption | `adoptionID` | `A` | `A001` |
+| Message | `messageID` | `M` | `M001` |
+| Lost/Found Report | `reportID` | `R` | `R001` |
+| Service | `serviceID` | `S` | `S001` |
+| Notification | `notificationID` | `N` | `N001` |
+| Health Record | `healthID` | `H` | `H001` |
+| Favorite | `favoriteID` | `F` | `F001` |
+
+> ⚠️ Status values and ID formats are **case-sensitive** and shared by all modules. Do not invent new ones without team agreement.
+
+---
+
+## 📍 Lost & Found
 
 Users can report missing or found pets using structured information.
 
-Report ID
-Pet Name
-Species
-Breed
-Location
-Date
-Description
-Contact Information
-Status
-Future Enhancement
+| Field | Description |
+|:--|:--|
+| `reportID` | Unique report ID (e.g. `R001`) |
+| `petName` | Pet's name (or `Unknown`) |
+| `species` / `breed` | Type and breed |
+| `location` | Last seen / found location |
+| `date` | Date of report (`DD/MM/YYYY`) |
+| `description` | Colour, markings, collar, etc. |
+| `contact` | Reporter's contact information |
+| `status` | `Lost` · `Found` · `Resolved` |
 
-A Lost & Found Matching Score can compare:
+> 🔮 **Future Enhancement — Lost & Found Matching Score:** compare **Species + Breed + Location + Appearance + Date** to automatically suggest possible matches between lost and found reports.
 
-Breed + Species + Location + Appearance + Date
+---
 
-and suggest possible matches.
+## 🏪 Pet Services Directory
 
-🏪 PET SERVICES DIRECTORY
+| Service Type | Icon | Field | Description |
+|:--|:-:|:--|:--|
+| Veterinary Clinics | 🩺 | `serviceID` | Unique ID (e.g. `S001`) |
+| Pet Shops | 🛍️ | `serviceName` | Business name |
+| Grooming | ✂️ | `serviceType` | One of the types listed |
+| Boarding | 🏨 | `location` | Area / address |
+| Training | 🎓 | `contact` | Phone / email |
+| Food Providers | 🍖 | `description` | Short summary |
 
-The service directory connects users with local pet-related resources.
+---
 
-Veterinary Clinics
-Pet Shops
-Pet Grooming
-Pet Boarding
-Pet Training
-Pet Food Providers
+## 💉 Pet Health Care
 
-Each service can contain:
+| Field | Description |
+|:--|:--|
+| `petID` | Linked pet |
+| `vaccine` | Vaccine name |
+| `vaccinationDate` | Date given |
+| `nextDueDate` | Next dose due |
+| `medicalNotes` | Observations / conditions |
+| `medication` | Current medication |
+| `vetInfo` | Veterinary clinic / doctor |
 
-Service ID
-Service Name
-Service Type
-Location
-Contact
-Description
-💉 PET HEALTH CARE
+```text
+┌──────────────────────────────┐
+│  💉 HEALTH RECORD            │
+├──────────────────────────────┤
+│  Pet       : Bruno (P001)    │
+│  Vaccine   : Rabies          │
+│  Date      : 10/05/2026      │
+│  Next Due  : 10/05/2027      │
+└──────────────────────────────┘
+```
 
-Basic health records can be maintained for each pet.
+---
 
-Pet ID
-Vaccination
-Vaccination Date
-Next Due Date
-Medical Notes
-Medication
-Veterinary Information
-Example
-Pet       : Bruno
-Vaccine   : Rabies
-Date      : 10/05/2026
-Next Due  : 10/05/2027
-💬 MESSAGING
+## 💬 Messaging & 🔔 Notifications
 
-A basic user-to-user communication module.
+<table>
+<tr>
+<td width="50%" valign="top">
 
-Sender ID
-Receiver ID
-Message ID
-Message
-Timestamp
+### 💬 Messaging
 
-Example:
+| Field | Example |
+|:--|:--|
+| `messageID` | `M001` |
+| `senderID` | `U101` |
+| `receiverID` | `U205` |
+| `message` | *Is Bruno still available?* |
+| `timestamp` | `07/10/2026 14:30` |
 
-User101 → User205
+</td>
+<td width="50%" valign="top">
 
-"Is Bruno still available for adoption?"
-🔔 NOTIFICATIONS
+### 🔔 Notifications
 
-The system can notify users about important events.
+| Trigger | Example |
+|:--|:--|
+| ✅ Adoption | Request approved |
+| 💬 Message | New message received |
+| 💉 Health | Vaccination reminder |
+| 📍 Lost & Found | Report updated |
+| 📢 System | Announcement |
 
-Examples:
+</td>
+</tr>
+</table>
 
-✓ Adoption request approved
-✓ New message received
-✓ Vaccination reminder
-✓ Lost & Found update
-✓ System announcement
-🛡️ ADMIN PANEL
+---
 
-The administrator acts as the central management layer.
+## 🛡️ Admin Panel
 
-                    ┌──────────────┐
-                    │ ADMIN LOGIN  │
-                    └──────┬───────┘
-                           ▼
-                  ┌─────────────────┐
-                  │ ADMIN DASHBOARD │
-                  └────────┬────────┘
-                           │
-        ┌──────────┬───────┼───────┬───────────┐
-        ▼          ▼       ▼       ▼           ▼
-      Users      Pets   Adoption Reports    Services
+```mermaid
+flowchart TD
+    A[🔐 Admin Login] --> B[🛡️ Admin Dashboard]
+    B --> C[👤 Users]
+    B --> D[🐾 Pets]
+    B --> E[🏠 Adoption]
+    B --> F[📍 Reports]
+    B --> G[🏪 Services]
+```
 
-Admin responsibilities may include:
+| Responsibility | Action |
+|:--|:--|
+| 👤 Manage users | View · Edit · Remove |
+| 🐾 Manage pet listings | Add · Update · Remove |
+| 🏠 Review adoption requests | Approve · Reject |
+| 📍 Manage lost & found | Update status · Resolve |
+| 🏪 Manage services | Add · Update · Remove |
+| 📊 System information | Counts of users, pets, requests, reports |
 
-Manage users
-Manage pet listings
-Review adoption requests
-Manage lost & found reports
-Manage service listings
-View system information
-📁 DATA & FILE STORAGE
+---
 
-The application uses file handling for persistent storage.
+## 📁 Data & File Storage
 
-data/
-├── users.txt
-├── pets.txt
-├── favorites.txt
-├── adoption.txt
-├── lost_found.txt
-├── services.txt
-├── health.txt
-├── messages.txt
-└── notifications.txt
-Pet Data Format
-petID|name|species|breed|age|gender|location|status
+All data is stored in plain-text files using `|` as the field separator.
 
-Example:
+| File | Record Format | Example |
+|:--|:--|:--|
+| `users.txt` | `userID\|name\|email\|password\|role\|location` | `U001\|Maruf\|maruf@mail.com\|****\|Admin\|Dhaka` |
+| `pets.txt` | `petID\|name\|species\|breed\|age\|gender\|location\|status` | `P001\|Bruno\|Dog\|Labrador\|3\|Male\|Dhaka\|Available` |
+| `favorites.txt` | `userID\|petID` | `U002\|P001` |
+| `adoption.txt` | `adoptionID\|userID\|petID\|date\|status` | `A001\|U002\|P001\|07/10/2026\|Pending` |
+| `lost_found.txt` | `reportID\|petName\|species\|breed\|location\|date\|description\|contact\|status` | `R001\|Kitty\|Cat\|Persian\|Uttara\|05/10/2026\|White, blue collar\|017XXXXXXXX\|Lost` |
+| `services.txt` | `serviceID\|name\|type\|location\|contact\|description` | `S001\|PawCare\|Vet\|Dhanmondi\|018XXXXXXXX\|24/7 clinic` |
+| `health.txt` | `healthID\|petID\|vaccine\|date\|nextDue\|notes\|medication\|vet` | `H001\|P001\|Rabies\|10/05/2026\|10/05/2027\|Healthy\|None\|PawCare` |
+| `messages.txt` | `messageID\|senderID\|receiverID\|message\|timestamp` | `M001\|U101\|U205\|Is Bruno available?\|07/10/2026 14:30` |
+| `notifications.txt` | `notificationID\|userID\|message\|date\|isRead` | `N001\|U002\|Adoption approved\|07/10/2026\|0` |
 
-P001|Bruno|Dog|Labrador|3|Male|Dhaka|Available
-P002|Mimi|Cat|Persian|2|Female|Uttara|Available
+> ⚠️ **Data Rules**
+> - Never use the `|` character inside a field value.
+> - Dates use `DD/MM/YYYY` everywhere.
+> - Any change to a file format must be agreed by the whole team and updated here first.
+> - Passwords should be hashed or at least masked; never commit real credentials.
 
-The | character is used as the field separator. Shared data formats must remain consistent across modules.
+---
 
-🧱 OBJECT-ORIENTED DESIGN
+## 🧱 Object-Oriented Design
 
-The project is designed around modular C++ classes.
+### 📦 Core Classes
 
-Possible Core Classes
-User
-Admin
-Pet
-AdoptionRequest
-Favorite
-LostFoundReport
-PetService
-HealthRecord
-Message
-Notification
-Matchmaker
-Conceptual Relationships
-                         ┌──────────┐
-                         │   User   │
-                         └────┬─────┘
-                              │
-             ┌────────────────┼────────────────┐
-             ▼                ▼                ▼
-        Favorites      Adoption Requests    Messages
-                              │
-                              ▼
-                           ┌──────┐
-                           │ Pet  │
-                           └──┬───┘
-                              │
-                 ┌────────────┼─────────────┐
-                 ▼            ▼             ▼
-             Health       Matchmaker     Adoption
-             Records        Engine        Status
+| Class | Responsibility | Key Relationships |
+|:--|:--|:--|
+| `User` | Base account data & login | Parent of `Admin` |
+| `Admin` | Management operations | Inherits `User` |
+| `Pet` | Pet profile & status | Used by most modules |
+| `AdoptionRequest` | Request lifecycle | Links `User` ↔ `Pet` |
+| `Favorite` | Saved pets | Links `User` ↔ `Pet` |
+| `LostFoundReport` | Lost/found cases | Owned by `User` |
+| `PetService` | Service listing | Managed by `Admin` |
+| `HealthRecord` | Vaccines & medical data | Belongs to `Pet` |
+| `Message` | User-to-user communication | Links two `User`s |
+| `Notification` | System alerts | Sent to `User` |
+| `Matchmaker` | Scoring & ranking | Reads `User` prefs + `Pet` list |
+| `FileManager` | Read / write data files | Used by every module |
 
-The final class structure may evolve during implementation.
+### 🔗 Class Relationships
 
-📂 PROJECT STRUCTURE
+```mermaid
+classDiagram
+    User <|-- Admin
+    User "1" --> "*" Favorite
+    User "1" --> "*" AdoptionRequest
+    User "1" --> "*" Message
+    User "1" --> "*" Notification
+    User "1" --> "*" LostFoundReport
+    AdoptionRequest "*" --> "1" Pet
+    Favorite "*" --> "1" Pet
+    Pet "1" --> "*" HealthRecord
+    Matchmaker ..> Pet : ranks
+    Matchmaker ..> User : reads preferences
+    Admin ..> PetService : manages
+```
+
+### 🧩 Design Principles
+
+| Principle | Application in This Project |
+|:--|:--|
+| 🔒 Encapsulation | Private data members with getters/setters in every class |
+| 🎭 Abstraction | `FileManager` hides file I/O details from modules |
+| 🧬 Inheritance | `Admin` extends `User` |
+| 🔄 Polymorphism | Virtual `displayMenu()` for user vs. admin dashboards |
+| 🧱 Modularity | One folder per feature module |
+| ♻️ Reusability | Shared helpers for splitting lines and generating IDs |
+| 🛠️ Maintainability | Consistent naming, formatting, and comments |
+
+> The final class structure may evolve during implementation.
+
+---
+
+## 📂 Project Structure
+
+```text
 Local-Pet-Care-Adoption-Matchmaker/
 │
 ├── 📄 README.md
 ├── 📄 .gitignore
+├── 📄 LICENSE
 │
-├── 📁 include/
+├── 📁 include/            # Header files (.h)
 │
 ├── 📁 src/
-│   ├── main.cpp
-│   ├── user/
-│   ├── pet/
-│   ├── search/
-│   ├── matchmaker/
-│   ├── adoption/
-│   ├── lost_found/
-│   ├── services/
-│   ├── health/
-│   ├── messaging/
-│   ├── notification/
-│   └── admin/
+│   ├── main.cpp           # Application entry point
+│   ├── user/              # 🔐 Authentication & users
+│   ├── pet/               # 🐾 Pet management
+│   ├── search/            # 🔎 Search, filter, favorites
+│   ├── matchmaker/        # ❤️ Compatibility engine
+│   ├── adoption/          # 🏠 Adoption requests
+│   ├── lost_found/        # 📍 Lost & found
+│   ├── services/          # 🏪 Service directory
+│   ├── health/            # 💉 Health records
+│   ├── messaging/         # 💬 Messaging
+│   ├── notification/      # 🔔 Notifications
+│   ├── admin/             # 🛡️ Admin panel
+│   └── utils/             # 📁 FileManager & shared helpers
 │
-├── 📁 data/
-│   ├── users.txt
-│   ├── pets.txt
-│   ├── favorites.txt
-│   ├── adoption.txt
-│   ├── lost_found.txt
-│   ├── services.txt
-│   ├── health.txt
-│   ├── messages.txt
-│   └── notifications.txt
+├── 📁 data/               # 💾 Persistent .txt storage
 │
 ├── 📁 docs/
 │   ├── architecture.md
 │   ├── database-design.md
 │   └── diagrams/
 │
-└── 📁 tests/
+└── 📁 tests/              # 🧪 Module test cases
+```
 
-The structure can be refined as development progresses. Avoid creating unnecessary empty files only for appearance.
+> Avoid creating empty files just for appearance; add them when the module is implemented.
 
-🔀 GIT & GITHUB WORKFLOW
+---
 
-The repository uses a feature-branch workflow.
+## 🔀 Git & GitHub Workflow
 
-                         ┌───────────────┐
-                         │     main      │
-                         │ Stable Code   │
-                         └───────┬───────┘
-                                 │
-               ┌─────────────────┼─────────────────┐
-               │                 │                 │
-               ▼                 ▼                 ▼
-        Maria Branch       Pranty Branch      Jannat Branch
-               │                 │                 │
-               ▼                 ▼                 ▼
-           Feature A          Feature B          Feature C
-               │                 │                 │
-               └─────────────────┼─────────────────┘
-                                 ▼
-                           Pull Request
-                                 │
-                                 ▼
-                              Review
-                                 │
-                                 ▼
-                              main
-🌿 Branch Naming
-maria/search-matchmaker
-pranty/pet-adoption
-jannat/lost-found-services
-maruf/health-messaging-admin
-megha/auth-file-notification
-🛠️ BASIC GIT WORKFLOW
-1. Update main
-git checkout main
-git pull origin main
-2. Create / switch to your branch
-git checkout -b maria/search-matchmaker
-3. Stage your changes
-git add .
-4. Commit
-git commit -m "Add pet search functionality"
-5. Push
-git push origin maria/search-matchmaker
-6. Create a Pull Request
+```mermaid
+gitGraph
+    commit id: "Init repo"
+    commit id: "Add README"
+    branch maria/search-matchmaker
+    commit id: "Add search"
+    checkout main
+    branch pranty/pet-adoption
+    commit id: "Add adoption"
+    checkout main
+    merge maria/search-matchmaker id: "PR #1"
+    merge pranty/pet-adoption id: "PR #2"
+    commit id: "Stable release"
+```
 
-On GitHub:
+### 🛠️ Step-by-Step
 
-Feature Branch
-      ↓
-Pull Request
-      ↓
-Code Review
-      ↓
-Approval
-      ↓
-Merge into main
-📝 COMMIT MESSAGE STYLE
-✅ Good
-Add pet search functionality
-Implement compatibility scoring
-Add adoption request system
-Create user registration and login
-Add vaccination record management
-Implement lost pet reporting
-Add basic messaging module
-Update project documentation
-❌ Avoid
-update
-final
-test
-new
-changes
-asdf
+| Step | Action | Command |
+|:-:|:--|:--|
+| 1️⃣ | Update `main` | `git checkout main` → `git pull origin main` |
+| 2️⃣ | Create / switch branch | `git checkout -b maruf/health-messaging-admin` |
+| 3️⃣ | Sync with latest `main` | `git merge main` |
+| 4️⃣ | Stage changes | `git add <files>` |
+| 5️⃣ | Commit | `git commit -m "Add vaccination record management"` |
+| 6️⃣ | Push | `git push origin maruf/health-messaging-admin` |
+| 7️⃣ | Open a Pull Request | GitHub → **Compare & pull request** |
+| 8️⃣ | Review → Approve → Merge | At least **one teammate** reviews before merging |
 
-A commit message should tell the team what changed.
+### 📝 Commit Message Style
 
-🔒 TEAM DEVELOPMENT RULES
+| ✅ Good | ❌ Avoid |
+|:--|:--|
+| `Add pet search functionality` | `update` |
+| `Implement compatibility scoring` | `final` |
+| `Add adoption request system` | `test` |
+| `Create user registration and login` | `new` |
+| `Add vaccination record management` | `changes` |
+| `Fix crash on empty pets.txt` | `asdf` |
 
-main = stable code. Feature branches = active development.
+> 💡 Start with a verb (**Add**, **Fix**, **Update**, **Refactor**, **Remove**) and describe *what* changed.
 
-Rules
-Do not directly develop features on main.
-Create a branch for your assigned module.
-Pull the latest main before major work.
-Commit small, meaningful changes.
-Test before pushing.
-Do not overwrite another member's work.
-Keep shared file formats consistent.
-Do not commit unrelated files.
-Review Pull Requests before merging.
-Resolve conflicts carefully.
-Keep main buildable whenever possible.
-Every member must understand the code they submit.
-🆔 COMMON ID CONVENTIONS
+---
 
-Use consistent identifiers across the project.
+## 🔒 Team Rules & Standards
 
-userID
-petID
-adoptionID
-messageID
-reportID
-serviceID
-notificationID
-Example IDs
-U001
-P001
-A001
-M001
-R001
-S001
-N001
-🧪 TESTING STRATEGY
+> **`main` = stable code** · **feature branches = active development**
 
-Every module should be tested before integration.
+| Category | ✅ Do | 🚫 Don't |
+|:--|:--|:--|
+| 🌿 **Branching** | One feature → one branch | Develop directly on `main` |
+| 🔄 **Syncing** | Pull latest `main` before major work | Work on an outdated branch for days |
+| 💾 **Commits** | Small, meaningful commits | Commit unrelated or generated files |
+| 🧪 **Quality** | Test before pushing; keep `main` buildable | Push code that doesn't compile |
+| 👀 **Review** | Review every PR before merging | Merge your own PR without review |
+| 🤝 **Respect** | Resolve conflicts carefully | Overwrite another member's work |
+| 📁 **Data** | Use shared IDs, statuses, and formats | Change a file format alone |
+| 🧠 **Ownership** | Understand every line you submit | Submit code you can't explain |
 
-Test Areas
-✓ Valid input
-✓ Invalid input
-✓ Empty input
-✓ File read/write
-✓ Search results
-✓ Adoption status
-✓ Matchmaking calculations
-✓ Authentication
-✓ Messaging
-✓ Module integration
-Example Test Case
-Input:
-Search → Dog
+### 🧑‍💻 Coding Standards
 
-Expected:
-Display all available dogs matching the search criteria.
-⚠️ ERROR HANDLING
+| Rule | Example |
+|:--|:--|
+| Classes in `PascalCase` | `AdoptionRequest` |
+| Functions & variables in `camelCase` | `calculateScore()`, `petList` |
+| Constants in `UPPER_SNAKE_CASE` | `MAX_PETS` |
+| Files in `snake_case` | `lost_found.cpp` |
+| Keep functions short and focused | One task per function |
+| Comment important algorithms | Especially the matchmaker scoring |
+| `main.cpp` is the only entry point | No extra `main()` functions in modules |
 
-The application should handle common errors without crashing.
+---
 
-Examples:
+## 🧪 Testing & Error Handling
 
-Invalid login
-Pet ID not found
-User ID not found
-Invalid menu choice
-File not found
-No search results
-Invalid adoption request
-Invalid input format
+### ✔️ Test Areas
 
-The user should receive a clear message explaining the problem.
+| Area | What to Verify |
+|:--|:--|
+| ✅ Valid input | Correct output for normal data |
+| ❌ Invalid input | Clear error message, no crash |
+| ⬜ Empty input | Handled gracefully |
+| 📁 File I/O | Data saved and reloaded correctly |
+| 🔎 Search | Correct pets returned |
+| 🏠 Adoption | Status changes correctly |
+| ❤️ Matchmaker | Scores calculated and sorted correctly |
+| 🔐 Authentication | Valid / invalid login |
+| 💬 Messaging | Messages stored and displayed |
+| 🔗 Integration | Modules work together through the dashboard |
 
-🎓 10% DEMONSTRATION MILESTONE
+### 🧾 Example Test Case
 
-The first demonstration should show a small but working slice of each member's module.
+| Test ID | Input | Expected Output | Result |
+|:-:|:--|:--|:-:|
+| `T001` | Search → `Dog` | All available dogs are displayed | ⬜ |
+| `T002` | Login with wrong password | `Invalid username or password.` | ⬜ |
+| `T003` | Adopt pet `P999` | `Pet ID not found.` | ⬜ |
 
-The target is:
+### ⚠️ Handled Errors
 
-             INPUT
-               │
-               ▼
-          PROCESSING
-               │
-               ▼
-             OUTPUT
+| Error | User Message |
+|:--|:--|
+| Invalid login | *Invalid username or password.* |
+| Pet / User ID not found | *No record found for the given ID.* |
+| Invalid menu choice | *Please choose a valid option.* |
+| File not found | *Data file missing — a new one will be created.* |
+| No search results | *No pets match your search.* |
+| Invalid adoption request | *This pet is not available for adoption.* |
+| Invalid input format | *Invalid input. Please try again.* |
 
-The feature should:
+---
 
-Compile
-Accept input
-Process the input
-Produce meaningful output
-Be committed by the responsible member
-Be explainable by that member
-👩‍💻 Maria — 10% Target
+## 🎓 10% Demonstration Milestone
 
-Search & Filter
+The first demo shows a **small but working slice** of every module:
 
-Search pets by at least one criterion.
-Display matching pets.
+```text
+   📥 INPUT   ──►   ⚙️ PROCESSING   ──►   📤 OUTPUT
+```
 
-Favorites
+**Every feature must:** ✅ Compile · ✅ Accept input · ✅ Process it · ✅ Produce meaningful output · ✅ Be committed by its owner · ✅ Be explainable by its owner
 
-Add a pet to favorites.
-Remove a pet from favorites.
+| Member | Module | 10% Target | Done |
+|:--|:--|:--|:-:|
+| 👩‍💻 **Maria** | 🔎 Search & Filter | Search pets by at least one criterion and display matches | ⬜ |
+| | ⭐ Favorites | Add and remove a pet from favorites | ⬜ |
+| | ❤️ Matchmaker | Accept basic preferences and output an initial score (e.g. `Bruno → 85% Match`) | ⬜ |
+| 👩‍💻 **Pranty** | 🐾 Pet Management | Add a pet and view pet information | ⬜ |
+| | 🏠 Adoption | Select a pet, submit a request, display `Pending` | ⬜ |
+| 👩‍💻 **Jannat** | 📍 Lost & Found | Report a lost/found pet and view reports | ⬜ |
+| | 🏪 Pet Services | Add a service listing and display services | ⬜ |
+| 👨‍💻 **Maruf** | 💉 Pet Health | Add and view a vaccination/health record | ⬜ |
+| | 💬 Messaging | Send a message and display stored messages | ⬜ |
+| | 🛡️ Admin | Show a basic admin menu and system information | ⬜ |
+| 👩‍💻 **Megha** | 🔐 Authentication | Register a user and log in | ⬜ |
+| | 📁 File Handling | Save data to a file and read it back | ⬜ |
+| | 📍 Local Discovery | Display basic local pet services | ⬜ |
+| | 🔔 Notifications | Display a basic notification | ⬜ |
+| | 🏠 Dashboard | Display a basic user dashboard | ⬜ |
 
-Matchmaker
+---
 
-Accept basic preferences.
-Calculate an initial compatibility score.
+## 🗺️ Development Roadmap
 
-Example:
+| Phase | Name | Key Tasks | Status |
+|:-:|:--|:--|:-:|
+| **01** | 🏗️ Foundation | GitHub repo · README · Team roles · Branch strategy · Naming conventions · Data formats | ✅ Done |
+| **02** | ⚙️ Core Modules | Authentication · Pet management · Search · Adoption · Lost & found · Services · Health · Messaging · File handling | 🔄 In Progress |
+| **03** | 🧠 Intelligence | Matchmaker engine · Compatibility scoring · Ranking · Advanced filtering | ⏳ Planned |
+| **04** | 🔗 Integration | Connect modules · Shared storage · Dashboard · Notifications · Conflict resolution · Full-system testing | ⏳ Planned |
+| **05** | 🎉 Finalization | Bug fixing · UI/UX polish · Documentation · Demo prep · Final presentation | ⏳ Planned |
 
-Bruno → 85% Match
-👩‍💻 Pranty — 10% Target
+### 🔮 Future Enhancements
 
-Pet Management
+| Idea | Benefit |
+|:--|:--|
+| 🔍 Lost & Found auto-matching | Reunite pets faster |
+| 🔐 Password hashing | Better account security |
+| 📊 Adoption statistics report | Insights for admins |
+| ⭐ Service ratings & reviews | Help users pick trusted services |
+| 🗄️ Migration to SQLite | Scalable, query-friendly storage |
+| 🖼️ GUI version (Qt) | Friendlier user experience |
 
-Add a pet.
-View pet information.
+---
 
-Adoption
+## 🎯 Final Objective
 
-Select a pet.
-Submit an adoption request.
-Display Pending.
-👩‍💻 Jannat — 10% Target
+The final product is **one coherent system**, not a collection of separate programs:
 
-Lost & Found
-
-Report a lost/found pet.
-View reports.
-
-Pet Services
-
-Add a service listing.
-Display available services.
-👨‍💻 Maruf — 10% Target
-
-Pet Health
-
-Add a vaccination/health record.
-View the record.
-
-Messaging
-
-Send a basic message.
-Display stored messages.
-
-Admin
-
-Display a basic admin menu.
-View basic system information.
-👩‍💻 Megha — 10% Target
-
-Authentication
-
-Register a user.
-Log in.
-
-File Handling
-
-Save data to a file.
-Read data from a file.
-
-Local Discovery
-
-Display basic local pet services.
-
-Notifications
-
-Display a basic notification.
-
-Dashboard
-
-Display a basic user dashboard.
-🖥️ FINAL APPLICATION FLOW
-┌───────────────────────┐
-│    🐾 START APP       │
-└───────────┬───────────┘
-            ▼
-┌───────────────────────┐
-│  🔐 LOGIN / REGISTER  │
-└───────────┬───────────┘
-            ▼
-┌───────────────────────┐
-│   🏠 USER DASHBOARD   │
-└───────────┬───────────┘
-            │
-   ┌────────┼────────┬─────────┐
-   ▼        ▼        ▼         ▼
- Search   Match    Adoption   Services
-   │        │        │         │
-   ▼        ▼        ▼         ▼
-Filter   Score    Request    Discover
-   │        │        │         │
-   └────────┴────────┴─────────┘
+```text
+                 👤 USER
+                    │
+   ┌────────┬───────┼───────┬────────┐
+   ▼        ▼       ▼       ▼        ▼
+  🔐       🔎      ❤️      🏠       📍
+ Auth   Discover  Match   Adopt  Lost&Found
+   │        │       │       │        │
+   └────────┴───────┼───────┴────────┘
+   ┌────────┬───────┼───────┐
+   ▼        ▼       ▼       ▼
+  🏪       💉      💬      🔔
+Services  Health  Message Notify
                     │
                     ▼
-             ❤️ PET CONNECTION
-                    │
-                    ▼
-              💬 COMMUNICATION
-                    │
-                    ▼
-               💉 PET CARE
-🚀 DEVELOPMENT ROADMAP
-PHASE 01 — FOUNDATION
-✓ GitHub Repository
-✓ README
-✓ Team Responsibilities
-✓ Branch Strategy
-✓ Naming Conventions
-✓ Data Formats
-PHASE 02 — CORE MODULES
-→ Authentication
-→ Pet Management
-→ Search
-→ Adoption
-→ Lost & Found
-→ Services
-→ Health
-→ Messaging
-→ File Handling
-PHASE 03 — INTELLIGENCE
-→ Matchmaker Engine
-→ Compatibility Scoring
-→ Ranking
-→ Improved Search & Filtering
-PHASE 04 — INTEGRATION
-→ Connect Modules
-→ Integrate File Storage
-→ Dashboard
-→ Notifications
-→ Resolve Conflicts
-→ Full-System Testing
-PHASE 05 — FINALIZATION
-→ Bug Fixing
-→ UI / UX Improvements
-→ Documentation
-→ Demo Preparation
-→ Final Presentation
-🧩 SOFTWARE DESIGN PRINCIPLES
+           🐾 BETTER PET CARE
+```
 
-The project should demonstrate:
+---
 
-Principle	Application
-Encapsulation	Keep data and methods organized inside classes
-Abstraction	Hide unnecessary implementation details
-Inheritance	Reuse common behavior where appropriate
-Polymorphism	Support flexible object behavior where useful
-Modularity	Separate features into logical modules
-Reusability	Avoid unnecessary duplicate code
-Maintainability	Keep the code readable and organized
-🏆 PROJECT HIGHLIGHTS
-🐾 Pet Adoption
-❤️ Smart Matchmaking
-🔎 Search & Filtering
-⭐ Favorites
-📍 Lost & Found
-🏪 Local Pet Services
-💉 Pet Health Records
-💬 Messaging
-🔔 Notifications
-🛡️ Admin Panel
-🔐 Authentication
-📁 File-Based Storage
-🧱 C++ OOP Architecture
-🔀 GitHub Team Collaboration
-📌 PROJECT STANDARDS
-Code
-Keep functions focused and readable.
-Use meaningful variable and function names.
-Follow consistent formatting.
-Avoid unnecessary duplication.
-Comment important algorithms and decisions.
-Git
-One feature → one branch.
-One meaningful change → one meaningful commit.
-Pull before major work.
-Test before pushing.
-Review before merging.
-Integration
-Use shared IDs.
-Use shared status values.
-Follow agreed file formats.
-Keep main.cpp as the final application entry point.
-🎯 FINAL OBJECTIVE
+## 🤝 Contributing
 
-The final product should be more than a collection of separate C++ modules.
+1. Pick an issue or module task assigned to you.
+2. Create your feature branch from the latest `main`.
+3. Follow the [Team Rules & Standards](#-team-rules--standards).
+4. Open a Pull Request with a clear title and description of your changes.
+5. Request a review from at least one teammate.
 
-It should function as one coherent system where:
+## 📜 License
 
-USER
- │
- ├── 🔐 Authentication
- │
- ├── 🔎 Pet Discovery
- │
- ├── ❤️ Matchmaking
- │
- ├── 🏠 Adoption
- │
- ├── 📍 Lost & Found
- │
- ├── 🏪 Local Services
- │
- ├── 💉 Pet Health
- │
- ├── 💬 Messaging
- │
- └── 🔔 Notifications
-          │
-          ▼
-     🐾 BETTER PET CARE
+This project is developed for academic purposes. Add a `LICENSE` file (for example, **MIT**) if the team decides to make it open source.
 
-The project demonstrates C++ programming, OOP, algorithms, file handling, software architecture, Git/GitHub collaboration, and real-world problem solving through a single integrated application.
+## 🙏 Acknowledgements
+
+- Our course instructor(s) for guidance and feedback
+- Local shelters and pet owners who inspired the idea
+- The open-source community for tools and learning resources
+
+---
 
 <div align="center">
 
-🐾 LOCAL PET CARE & ADOPTION MATCHMAKER
-Find the right pet. Build a better bond. Care locally.
+### 🐾 Local Pet Care & Adoption Matchmaker
 
-Built with C++ • Designed as a team • Developed with Git & GitHub
+*Find the right pet. Build a better bond. Care locally.*
+
+**Built with ❤️ in C++ by**
+
+| 👩‍💻 Maria | 👩‍💻 Pranty | 👩‍💻 Jannat | 👨‍💻 Maruf | 👩‍💻 Megha |
+|:-:|:-:|:-:|:-:|:-:|
+| Discovery & Matching | Adoption & Pets | Community & Services | Care & Admin | Data & Integration |
+
+<sub>⭐ If you like this project, give it a star on GitHub! ⭐</sub>
 
 </div>
