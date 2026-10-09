@@ -110,14 +110,25 @@ public:
                 }
 
                 if (approve) {
-                    req.status = "Approved";
-                    // Mark pet as adopted
+                    bool petFound = false;
                     for (auto& pet : pets) {
                         if (pet.id == req.petId) {
+                            petFound = true;
+                            if (pet.isAdopted) {
+                                req.status = "Rejected";
+                                cout << "\n[INFO] Request ID " << reqId
+                                     << " REJECTED. Pet is already adopted.\n";
+                                return;
+                            }
                             pet.isAdopted = true;
                             break;
                         }
                     }
+                    if (!petFound) {
+                        cout << "\n[ERROR] Cannot process request. Pet record not found.\n";
+                        return;
+                    }
+                    req.status = "Approved";
                     cout << "\n[SUCCESS] Request ID " << reqId << " APPROVED! Pet marked as adopted.\n";
                 } else {
                     req.status = "Rejected";
