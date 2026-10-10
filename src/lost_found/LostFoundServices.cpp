@@ -2,8 +2,54 @@
 #include <vector>
 #include <string>
 #include <limits>
+#include <algorithm>
+#include <cctype>
 
 using namespace std;
+
+namespace {
+    int readIntInRange(const string& prompt, int minValue, int maxValue) {
+        int value;
+        while (true) {
+            cout << prompt;
+            if (cin >> value && value >= minValue && value <= maxValue) {
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                return value;
+            }
+
+            cout << "Invalid input. Please enter a number between " << minValue
+                 << " and " << maxValue << "." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    }
+
+    string readNonEmptyLine(const string& prompt) {
+        string value;
+        while (true) {
+            cout << prompt;
+            getline(cin, value);
+            if (!value.empty()) {
+                return value;
+            }
+            cout << "Input cannot be empty. Please try again." << endl;
+        }
+    }
+
+    string normalizeArea(string text) {
+        const size_t first = text.find_first_not_of(" \t\r\n");
+        if (first == string::npos) {
+            return "";
+        }
+
+        const size_t last = text.find_last_not_of(" \t\r\n");
+        text = text.substr(first, last - first + 1);
+        transform(text.begin(), text.end(), text.begin(), [](unsigned char ch) {
+            return static_cast<char>(tolower(ch));
+        });
+        return text;
+    }
+}
 
 struct PetNotice {
     int id;
@@ -28,22 +74,11 @@ public:
         PetNotice p;
         p.id = currentId++;
 
-        cout << "\nSelect Status (1. LOST / 2. FOUND): ";
-        int choice;
-        cin >> choice;
+        int choice = readIntInRange("\nSelect Status (1. LOST / 2. FOUND): ", 1, 2);
         p.status = (choice == 1) ? "LOST" : "FOUND";
-
-        
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-        cout << "Enter Pet Name/Breed: ";
-        getline(cin, p.name);
-
-        cout << "Enter Location/Area: ";
-        getline(cin, p.location);
-
-        cout << "Enter Contact Phone Number: ";
-        getline(cin, p.phone);
+        p.name = readNonEmptyLine("Enter Pet Name/Breed: ");
+        p.location = readNonEmptyLine("Enter Location/Area: ");
+        p.phone = readNonEmptyLine("Enter Contact Phone Number: ");
 
         notices.push_back(p);
         cout << ">> Notice added successfully! Assigned Notice ID: " << p.id << endl;
@@ -68,15 +103,14 @@ public:
     }
 
     void searchByArea() const {
-        string area;
-        cout << "\nEnter Area/Location to Search (e.g., Uttara): ";
-        getline(cin, area);
+        string area = readNonEmptyLine("\nEnter Area/Location to Search (e.g., Uttara): ");
+        string normalizedArea = normalizeArea(area);
 
         cout << "\n--- Search Results for Area: '" << area << "' ---" << endl;
         bool found = false;
 
         for (const auto& n : notices) {
-            if (n.location == area) {
+            if (normalizeArea(n.location) == normalizedArea) {
                 cout << "ID: " << n.id 
                      << " | [" << n.status << "] " << n.name 
                      << " | Contact: " << n.phone << endl;
@@ -92,7 +126,7 @@ public:
 
 int main() {
     LostFoundManager manager;
-    int option;
+    int option = 4;
 
     do {
         cout << "\n==========================================" << endl;
@@ -103,16 +137,13 @@ int main() {
         cout << "3. Search Notices by Location" << endl;
         cout << "4. Exit Program" << endl;
         cout << "==========================================" << endl;
-        cout << "Enter Choice (1-4): ";
-        cin >> option;
+        option = readIntInRange("Enter Choice (1-4): ", 1, 4);
 
         if (option == 1) {
             manager.showAllNotices();
         } else if (option == 2) {
             manager.addNotice();
         } else if (option == 3) {
-            
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             manager.searchByArea();
         }
 
