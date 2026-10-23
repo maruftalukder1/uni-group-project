@@ -5,9 +5,9 @@
 #include <vector>
 #include "pet.h"
 
-// Leave a text field empty (or an age as -1) to ignore that filter
 struct SearchCriteria
 {
+    std::string keyword;
     std::string species;
     std::string breed;
     std::string gender;
@@ -15,6 +15,7 @@ struct SearchCriteria
     std::string status;
     int minAge = -1;
     int maxAge = -1;
+    bool availableOnly = false;
 };
 
 class PetSearch

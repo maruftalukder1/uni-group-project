@@ -13,14 +13,19 @@ private:
     int age;
     std::string gender;
     std::string location;
-    std::string status;   // "Available" or "Adopted"
+    std::string status;
 
 public:
     Pet();
-    Pet(const std::string& petID, const std::string& name,
-        const std::string& species, const std::string& breed,
-        int age, const std::string& gender,
-        const std::string& location, const std::string& status);
+
+    Pet(const std::string& petID,
+        const std::string& name,
+        const std::string& species,
+        const std::string& breed,
+        int age,
+        const std::string& gender,
+        const std::string& location,
+        const std::string& status);
 
     std::string getPetID() const;
     std::string getName() const;
@@ -36,7 +41,6 @@ public:
     bool isAvailable() const;
     void display() const;
 
-    // petID|name|species|breed|age|gender|location|status
     std::string toFileString() const;
     static bool fromFileString(const std::string& line, Pet& out);
 };
